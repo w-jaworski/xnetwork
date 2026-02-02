@@ -8,9 +8,5 @@
 
  ; Odpowiednik flagi -linkall z Makefile
  (library_flags :standard -linkall)
-
- ; Makefile sugeruje, że moduły są dostępne bezpośrednio (np. Xstring),
- ; a nie jako Xlib.Xstring. Aby zachować to zachowanie:
- (wrapped false)
 )
 

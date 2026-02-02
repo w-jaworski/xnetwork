@@ -31,7 +31,7 @@ let rec string_of_html_fmt spaces = function
   | JavaScript js -> JavaScript.js_to_string_fmt spaces js ^ "\n"
   | JavaScriptExpr js -> spaces ^ JavaScript.js_expr_to_string_fmt spaces js ^ "\n"
   | CSS l -> String.concat "" (List.rev (Xlist.rev_map l (fun t -> CSS.string_of_css_fmt spaces t ^ "\n")))
-  
+
 let rec string_of_html_fmt_bounded n spaces = function
     Text s -> spaces ^ s ^ "\n"
   | Comment s -> spaces ^ s ^ "\n"
