@@ -1,0 +1,16 @@
+(library
+ (name xnetwork)             ; Wewnętrzna nazwa biblioteki
+ (public_name xnetwork)      ; Nazwa publiczna (umożliwia instalację jak w 'make install')
+
+ ; Mapowanie flag '-I +...' na biblioteki Dune/Opam
+ ; str i unix to biblioteki standardowe, reszta to zewnętrzne pakiety
+ (libraries lwt xlib cohttp-lwt-unix)
+
+ ; Odpowiednik flagi -linkall z Makefile
+ (library_flags :standard -linkall)
+
+ ; Makefile sugeruje, że moduły są dostępne bezpośrednio (np. Xstring),
+ ; a nie jako Xlib.Xstring. Aby zachować to zachowanie:
+ (wrapped false)
+)
+
